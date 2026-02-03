@@ -1,0 +1,15 @@
+langchain
+langchain-community
+langchain-classic
+langchain-google-genai
+google-generativeai
+numpy<2.0
+sentence-transformers
+crawl4ai
+playwright
+beautifulsoup4
+lxml
+nest-asyncio
+requests
+flask
+flask-cors
