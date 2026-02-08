@@ -1,5 +1,6 @@
 import asyncio
 from typing import Dict, Any
+from select_evidence import process_evidence
 
 
 class FactCheckPipeline:
@@ -8,16 +9,20 @@ class FactCheckPipeline:
     """
 
     def __init__(self,
-                 claims_detector: ClaimsDetector,
-                 document_retriever: DocumentRetriever,
-                 top_k_selector: TopKSelector,
-                 claim_verifier: ClaimVerifier,
-                 top_k: int = 5):
+                 claims_detector,
+                 document_retriever,
+                 top_k_selector,
+                 claim_verifier,
+                 top_k: int = 5,
+                 evidence_k: int = 2,
+                 evidence_window_size: int = 2):
         self.claims_detector = claims_detector
         self.document_retriever = document_retriever
         self.top_k_selector = top_k_selector
         self.claim_verifier = claim_verifier
         self.top_k = top_k
+        self.evidence_k = evidence_k  # Số lượng bằng chứng được chọn từ select_evidence
+        self.evidence_window_size = evidence_window_size  # Kích thước cửa sổ câu
 
     async def run_async(self, text: str) -> Dict[str, Any]:
         """
@@ -63,31 +68,69 @@ class FactCheckPipeline:
         results['top_k_documents'] = top_k_documents
         print(f"✅ Selected top-{self.top_k} documents for all claims\n")
 
-        # Step 4: Verify claims
+        # Step 4: Select evidence using select_evidence module
         print("=" * 70)
-        print("Step 4: Verifying claims...")
+        print(f"Step 4: Selecting top-{self.evidence_k} evidences from documents...")
         print("=" * 70)
-
-        # Convert documents to evidence format for verifier
-        claims_with_evidence = []
+        
+        # Chuẩn bị dữ liệu cho process_evidence
+        data_for_evidence_selection = []
         for claim_data in claims:
             claim_id = claim_data['claim_id']
             claim_text = claim_data['claim_text']
             documents = top_k_documents.get(claim_id, [])
-
-            # Convert LangChain Documents to evidence format
-            evidences = []
-            for idx, doc in enumerate(documents):
-                evidences.append({
-                    "evidence_id": f"doc_{idx}_{doc.metadata.get('source', 'unknown')}",
-                    "site": doc.metadata.get('url', 'Unknown'),
-                    "text": doc.page_content[:500],  # Limit to 500 chars
-                    "reason": f"Retrieved as relevant document {idx+1}"
+            
+            # Chuyển đổi LangChain Documents sang định dạng mà select_evidence cần
+            doc_list = []
+            for doc in documents:
+                doc_list.append({
+                    "score": 1.0,  # Mặc định, hoặc có thể tính toán từ similarity score
+                    "site": doc.metadata.get('source', 'unknown'),
+                    "title": doc.metadata.get('title', 'Untitled'),
+                    "content": doc.page_content,
+                    "url": doc.metadata.get('url', ''),
+                    "date": doc.metadata.get('date', '')
                 })
+            
+            data_for_evidence_selection.append({
+                "claim": claim_text,
+                "documents": doc_list
+            })
+        
+        # Gọi hàm process_evidence để chọn bằng chứng tốt nhất
+        selected_evidences = process_evidence(
+            data_for_evidence_selection, 
+            k=self.evidence_k, 
+            window_size=self.evidence_window_size
+        )
+        results['selected_evidences'] = selected_evidences
+        print(f"✅ Selected {self.evidence_k} best evidences per claim\n")
 
+        # Step 5: Verify claims
+        print("=" * 70)
+        print("Step 5: Verifying claims...")
+        print("=" * 70)
+
+        # Chuyển đổi output của select_evidence thành format cho claim_verifier
+        claims_with_evidence = []
+        for evidence_data in selected_evidences:
+            claim_text = evidence_data['claim']
+            evidences = evidence_data['evidences']
+            
+            # Chuyển đổi sang format mà claim_verifier cần
+            formatted_evidences = []
+            for idx, evidence in enumerate(evidences):
+                formatted_evidences.append({
+                    "evidence_id": f"evidence_{idx}",
+                    "site": evidence.get('url', 'Unknown'),
+                    "text": evidence.get('content', ''),
+                    "date": evidence.get('date', ''),
+                    "reason": f"Selected evidence {idx+1} based on relevance and diversity"
+                })
+            
             claims_with_evidence.append({
                 "claim": claim_text,
-                "evidences": evidences
+                "evidences": formatted_evidences
             })
 
         verification_results = self.claim_verifier.verify_all_claims(claims_with_evidence)
@@ -156,10 +199,12 @@ class FactCheckPipeline:
             evidences = verification.get('evidences', [])
             if evidences:
                 print(f"\n📚 Evidence ({len(evidences)} sources):")
-                for j, evidence in enumerate(evidences[:3], 1):  # Show top 3
+                for j, evidence in enumerate(evidences, 1):
                     print(f"\n  [{j}] {evidence.get('evidence_id', 'Unknown')}")
-                    print(f"      🔗 {evidence.get('site', 'Unknown')[:60]}...")
-                    print(f"      📄 {evidence.get('text', '')[:100]}...")
+                    print(f"      🔗 {evidence.get('site', 'Unknown')[:80]}...")
+                    print(f"      📄 {evidence.get('text', '')[:150]}...")
+                    if evidence.get('date'):
+                        print(f"      📅 Date: {evidence.get('date')}")
 
         print("\n" + "=" * 80)
 
