@@ -40,14 +40,18 @@ class ClaimsDetector:
             template="""
             Split the following paragraph into a list of atomic, self-contained factual claims.
             Each claim must express exactly one verifiable fact.
-            For each claim, provide exactly one short keyword/phrase for web search.
+            IMPORTANT: The output language must match the input language (do NOT translate).
+            For each claim, provide:
+            - exactly one short keyword/phrase for web search
+            - a list of subjects/entities mentioned in the claim (person/organization/place/thing)
+            - one primary domain/topic the claim is about
 
             Text: {text}
 
             Return ONLY a JSON list with the following format:
             [
-                {{"claim_id": 1, "claim_text": "...", "keyword": "..."}},
-                {{"claim_id": 2, "claim_text": "...", "keyword": "..."}}
+                {{"claim_id": 1, "claim_text": "...", "keyword": "...", "subject": ["..."], "domain": "..."}},
+                {{"claim_id": 2, "claim_text": "...", "keyword": "...", "subject": ["..."], "domain": "..."}}
             ]
             """
         )
@@ -67,11 +71,20 @@ class ClaimsDetector:
 
             claim_text = item.get("claim_text")
             keyword = item.get("keyword")
+            subject = item.get("subject")
+            domain = item.get("domain")
             claim_id = item.get("claim_id") or idx
 
             if not isinstance(claim_text, str) or not claim_text.strip():
                 continue
             if not isinstance(keyword, str) or not keyword.strip():
+                continue
+            if not isinstance(subject, list) or not subject:
+                continue
+            subjects = [s.strip() for s in subject if isinstance(s, str) and s.strip()]
+            if not subjects:
+                continue
+            if not isinstance(domain, str) or not domain.strip():
                 continue
 
             normalized.append(
@@ -79,6 +92,8 @@ class ClaimsDetector:
                     "claim_id": int(claim_id),
                     "claim_text": claim_text.strip(),
                     "keyword": keyword.strip(),
+                    "subject": subjects,
+                    "domain": domain.strip(),
                 }
             )
 
@@ -87,12 +102,3 @@ class ClaimsDetector:
 
         return normalized
 
-
-if __name__ == "__main__":
-    # Example for Google Colab (after setting env vars):
-    #   import os
-    #   os.environ["GOOGLE_API_KEY"] = "..."
-    detector = ClaimsDetector()
-    sample_text = "Tổng thống Trung Quốc đến thăm Việt Nam"
-    output = detector.detect_claims(sample_text)
-    print(output)
