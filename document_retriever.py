@@ -133,15 +133,22 @@ class DocumentRetriever:
             return []
 
     def _search_google(
-        self, query: str, domain: str, max_results: int = 10
+        self, query: str, domain: str = None, max_results: int = 10
     ) -> List[str]:
-        """Fallback: Search Google for articles from specific domain using SerpAPI."""
+        """Fallback: Search Google for articles using SerpAPI.
+
+        Args:
+            query: Search query
+            domain: If provided, restrict to this domain. If None, search broadly.
+            max_results: Maximum number of results
+        """
         if not self.serpapi_key:
             return []
         try:
+            search_query = f"{query} site:{domain}" if domain else query
             params = {
                 "engine": "google",
-                "q": f"{query} site:{domain}",
+                "q": search_query,
                 "api_key": self.serpapi_key,
                 "num": max_results,
                 "gl": "vn",
@@ -154,7 +161,7 @@ class DocumentRetriever:
             urls = []
             for result in data.get("organic_results", [])[:max_results]:
                 url = result.get("link")
-                if url and domain in url:
+                if url:
                     urls.append(url)
             return urls
         except Exception as e:
@@ -180,10 +187,16 @@ class DocumentRetriever:
             print(f"  ⚠️  Error extracting content: {str(e)[:50]}")
             return {}
 
-    async def _crawl_articles(self, claim: str, max_per_site: int = 5) -> List[Dict]:
-        """Search and scrape articles."""
-        query = self._build_search_query(claim)
-        print(f"🔍 Searching for: '{query}'")
+    async def _crawl_articles(self, claim: str, max_per_site: int = 5, keyword: str = None) -> List[Dict]:
+        """Search and scrape articles.
+
+        Args:
+            claim: The claim text (used for broad Google search)
+            max_per_site: Max articles per site
+            keyword: Pre-extracted keyword from claims detector (used for site-specific search)
+        """
+        site_query = keyword if keyword else self._build_search_query(claim)
+        print(f"🔍 Site search query: '{site_query}'")
         documents = []
 
         async with AsyncWebCrawler(
@@ -192,7 +205,7 @@ class DocumentRetriever:
             for config in self.site_configs:
                 print(f"📰 Searching {config['site']}...")
                 try:
-                    search_url = config["search_url"].format(query=quote_plus(query))
+                    search_url = config["search_url"].format(query=quote_plus(site_query))
                     search_result = await crawler.arun(url=search_url)
                     article_urls = self._extract_article_links(
                         search_result.html,
@@ -203,9 +216,9 @@ class DocumentRetriever:
                     print(f"  Found {len(article_urls)} result links")
 
                     if len(article_urls) == 0 and self.serpapi_key:
-                        print("  🔄 Trying Google search fallback...")
+                        print("  🔄 Trying Google search fallback (site-specific)...")
                         article_urls = self._search_google(
-                            query, config["site"], max_results=max_per_site * 2
+                            site_query, domain=config["site"], max_results=max_per_site * 2
                         )
                         print(f"  Found {len(article_urls)} links from Google")
 
@@ -256,22 +269,65 @@ class DocumentRetriever:
                 except Exception as e:
                     print(f"  ✗ {str(e)[:60]}\n")
 
+        # Broad Google search fallback if not enough documents found
+        if len(documents) == 0 and self.serpapi_key:
+            print(f"🔄 No relevant documents found. Trying broad Google search with: '{claim}'")
+            broad_urls = self._search_google(
+                claim, domain=None, max_results=max_per_site * 2
+            )
+            print(f"  Found {len(broad_urls)} links from broad Google search")
+
+            async with AsyncWebCrawler(
+                browser_type="chromium", headless=True, verbose=False
+            ) as crawler:
+                count = 0
+                for url in broad_urls:
+                    if count >= max_per_site:
+                        break
+                    try:
+                        result = await crawler.arun(url=url)
+                        if not result or not hasattr(result, "html"):
+                            continue
+
+                        # Use markdown content for any site
+                        markdown = getattr(result, "markdown", None)
+                        if markdown and len(markdown.strip()) > 50:
+                            title = markdown.split("\n")[0][:80] if markdown else "Untitled"
+                            from urllib.parse import urlparse
+                            site = urlparse(url).netloc
+                            documents.append(
+                                {
+                                    "site": site,
+                                    "url": url,
+                                    "title": title,
+                                    "content": markdown[:3000],
+                                    "date": None,
+                                }
+                            )
+                            count += 1
+                            print(f"  ✓ {title[:60]}")
+                    except Exception as e:
+                        print(f"  ⚠️  Error crawling {url[:50]}: {str(e)[:30]}")
+                        continue
+                print(f"  → {count} articles from broad search\n")
+
         print(f"✅ Retrieved {len(documents)} total documents\n")
         return documents
 
-    async def retrieve_documents(self, claim: str, k: int = 10) -> List[Document]:
+    async def retrieve_documents(self, claim: str, k: int = 10, keyword: str = None) -> List[Document]:
         """
         Retrieve relevant documents for a claim.
 
         Args:
             claim: The claim text to search for
             k: Number of documents to retrieve
+            keyword: Pre-extracted keyword from claims detector
 
         Returns:
             List of LangChain Document objects
         """
         # Crawl articles
-        raw_docs = await self._crawl_articles(claim, max_per_site=5)
+        raw_docs = await self._crawl_articles(claim, max_per_site=5, keyword=keyword)
 
         if not raw_docs:
             print("⚠️  No documents retrieved")
@@ -347,12 +403,15 @@ class DocumentRetriever:
         for claim_data in claims:
             claim_id = claim_data["claim_id"]
             claim_text = claim_data["claim_text"]
+            keyword = claim_data.get("keyword")
 
             print(f"\n{'=' * 70}")
             print(f"Retrieving for Claim {claim_id}: {claim_text}")
+            if keyword:
+                print(f"Using keyword: {keyword}")
             print(f"{'=' * 70}\n")
 
-            documents = await self.retrieve_documents(claim_text, k=k)
+            documents = await self.retrieve_documents(claim_text, k=k, keyword=keyword)
             results[claim_id] = documents
 
             print(f"Retrieved {len(documents)} documents for claim {claim_id}\n")

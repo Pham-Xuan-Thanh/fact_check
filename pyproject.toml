@@ -3,7 +3,7 @@ name = "fact-check"
 version = "0.1.0"
 description = "Fact checking application using LangChain and Google AI"
 readme = "README.md"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.12"
 dependencies = [
     "langchain==1.2.9",
     "langchain-community==0.4.1",
@@ -23,4 +23,5 @@ dependencies = [
     "pytest==8.3.4",
     "pytest-asyncio==0.24.0",
     "faiss-cpu==1.9.0",
+    "scikit-learn",
 ]

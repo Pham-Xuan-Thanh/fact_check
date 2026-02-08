@@ -13,7 +13,7 @@ class FactCheckPipeline:
                  document_retriever,
                  top_k_selector,
                  claim_verifier,
-                 top_k: int = 5,
+                 top_k: int = 3,
                  evidence_k: int = 2,
                  evidence_window_size: int = 2):
         self.claims_detector = claims_detector
@@ -55,7 +55,13 @@ class FactCheckPipeline:
         claim_documents = await self.document_retriever.retrieve_for_all_claims(
             claims, k=self.top_k * 2  # Retrieve more for better selection
         )
-        results['retrieved_documents'] = claim_documents
+        results['retrieved_documents'] = {
+            claim_id: [
+                {"content": doc.page_content, **doc.metadata}
+                for doc in docs
+            ]
+            for claim_id, docs in claim_documents.items()
+        }
         print(f"✅ Retrieved documents for all claims\n")
 
         # Step 3: Select top-k documents
@@ -65,7 +71,13 @@ class FactCheckPipeline:
         top_k_documents = self.top_k_selector.select_for_all_claims(
             claims, claim_documents, self.top_k
         )
-        results['top_k_documents'] = top_k_documents
+        results['top_k_documents'] = {
+            claim_id: [
+                {"content": doc.page_content, **doc.metadata}
+                for doc in docs
+            ]
+            for claim_id, docs in top_k_documents.items()
+        }
         print(f"✅ Selected top-{self.top_k} documents for all claims\n")
 
         # Step 4: Select evidence using select_evidence module
