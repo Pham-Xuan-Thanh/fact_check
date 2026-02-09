@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fact Check Web</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="title-group">
+          <h1>Fact Check Web</h1>
+        </div>
+      </header>
+
+      <section class="input-card">
+        <label for="claim-input">Nhập văn bản cần kiểm tra</label>
+        <textarea
+          id="claim-input"
+          rows="4"
+          placeholder="Nhập nội dung cần fact-check..."
+        ></textarea>
+        <div class="actions">
+          <button id="check-btn">Check</button>
+          <span id="status-text"></span>
+        </div>
+      </section>
+
+      <section id="result-panel" class="panel hidden">
+        <div class="panel-header">
+          <h2>Kết quả</h2>
+          <button id="clear-btn">Clear</button>
+        </div>
+        <div id="result-body" class="panel-body"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
