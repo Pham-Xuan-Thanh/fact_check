@@ -1,8 +1,9 @@
 import re
 import json
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
+from rank_bm25 import BM25Okapi
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def clean_leading_connectors(text):
     """Xóa bỏ các từ nối gây cụt ý ở đầu câu bằng chứng."""
@@ -12,22 +13,25 @@ def clean_leading_connectors(text):
         r"^vì vậy,?\s*", r"^trong khi đó,?\s*"
     ]
     cleaned = text.strip()
-    if not cleaned: return ""
+    if not cleaned: return "" 
     for pattern in connectors:
         cleaned = re.sub(pattern, "", cleaned, flags=re.IGNORECASE)
     return cleaned[0].upper() + cleaned[1:] if cleaned else ""
 
 def extract_keywords(text):
-    """Lấy các thực thể số và tên riêng để ưu tiên thông tin quan trọng."""
+    """Lấy thực thể số và tên riêng (viết hoa) để ưu tiên thông tin cốt lõi."""
     return set(re.findall(r'\d+(?:\.\d+)?|[A-Z][a-z]+(?:\s[A-Z][a-z]+)*', text))
 
 def process_evidence(data, k=2, window_size=2):
     results = []
+    tfidf_vectorizer = TfidfVectorizer()
+
     for entry in data:
         claim = entry['claim']
         claim_keywords = extract_keywords(claim)
         all_candidates = []
 
+        # 1. Trích xuất ứng viên (Sliding Window)
         for doc in entry['documents']:
             sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', doc['content']) if len(s.strip()) > 5]
             for i in range(len(sentences)):
@@ -49,32 +53,48 @@ def process_evidence(data, k=2, window_size=2):
 
         if not all_candidates: continue
 
-        texts = [c['text'] for c in all_candidates]
-        vectorizer = TfidfVectorizer().fit(texts + [claim])
-        vectors = vectorizer.transform(texts)
-        claim_vector = vectorizer.transform([claim])
+        # 2. Xếp hạng bằng BM25
+        # Token hóa (tách từ đơn giản bằng khoảng trắng)
+        tokenized_corpus = [c['text'].lower().split() for c in all_candidates]
+        tokenized_claim = claim.lower().split()
+        
+        bm25 = BM25Okapi(tokenized_corpus)
+        bm25_scores = bm25.get_scores(tokenized_claim)
+        
+        # Chuẩn hóa điểm BM25 về [0, 1]
+        max_bm25 = max(bm25_scores) if max(bm25_scores) > 0 else 1
+        rel_scores = np.array([s / max_bm25 for s in bm25_scores])
 
-        rel_scores = cosine_similarity(vectors, claim_vector).flatten()
+        # 3. Kết hợp điểm đa tiêu chí
         combined_scores = (
             0.4 * rel_scores +
             0.3 * np.array([c['doc_score'] for c in all_candidates]) +
             0.3 * np.array([c['keyword_boost'] for c in all_candidates])
         )
 
+        # 4. Tối ưu hóa sự đa dạng bằng MMR (Sử dụng Vector để tính độ trùng lặp)
+        texts = [c['text'] for c in all_candidates]
+        vectors = tfidf_vectorizer.fit_transform(texts)
+        
         selected_indices = []
         unselected_indices = list(range(len(all_candidates)))
+        
         while len(selected_indices) < k and unselected_indices:
             mmr_scores = []
             for i in unselected_indices:
-                rel = combined_scores[i]
+                relevance = combined_scores[i]
+                # Hình phạt trùng lặp (Redundancy)
                 redundancy = np.max(cosine_similarity(vectors[i], vectors[selected_indices])) if selected_indices else 0
-                score = 0.5 * rel - 0.5 * redundancy
+                
+                # MMR Score: Lambda = 0.5
+                score = 0.5 * relevance - 0.5 * redundancy
                 mmr_scores.append((score, i))
+            
             best_idx = max(mmr_scores, key=lambda x: x[0])[1]
             selected_indices.append(best_idx)
             unselected_indices.remove(best_idx)
 
-        # Chỉ lấy nội dung và URL, loại bỏ confidence/source name
+        # 5. Đóng gói kết quả (Chỉ lấy URL, Content, Date)
         final_evidences = []
         for idx in selected_indices:
             cand = all_candidates[idx]
@@ -83,7 +103,9 @@ def process_evidence(data, k=2, window_size=2):
                 "content": clean_leading_connectors(cand['text']),
                 "date": cand['date']
             })
+            
         results.append({"claim": claim, "evidences": final_evidences})
+    
     return results
 
 # --- Dữ liệu đầu vào ---
