@@ -43,6 +43,7 @@ class FactCheckPipeline:
         claims = self.claims_detector.detect_claims(text)
         results['claims'] = claims
         print(f"✅ Found {len(claims)} claims\n")
+        print(f"Claims={claims}")
 
         if not claims:
             print("⚠️  No claims detected. Exiting pipeline.")

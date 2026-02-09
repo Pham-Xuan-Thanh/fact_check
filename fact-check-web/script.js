@@ -180,7 +180,7 @@ checkBtn.addEventListener("click", async () => {
   resultBody.innerHTML = "";
 
   try {
-    const response = await fetch("http://localhost:5000/fact-check", {
+    const response = await fetch("https://factcheck.thanhpx.work/fact-check", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),

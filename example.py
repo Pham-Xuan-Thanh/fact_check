@@ -9,7 +9,7 @@ from claims_detector import ClaimsDetector
 from document_retriever import DocumentRetriever
 from topk_selector import TopKSelector
 from claim_verifier import ClaimVerifier
-from config import GOOGLE_API_KEY, MODEL_NAME, EMBEDDING_MODEL, SITE_CONFIGS
+from config import GOOGLE_API_KEY, MODEL_NAME, EMBEDDING_MODEL, SITE_CONFIGS, SERPAPI_KEY
 
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 
@@ -26,7 +26,7 @@ async def main():
     
     # Initialize components
     claims_detector = ClaimsDetector(llm=llm)
-    document_retriever = DocumentRetriever(embeddings=embeddings, site_configs=SITE_CONFIGS)
+    document_retriever = DocumentRetriever(embeddings=embeddings, site_configs=SITE_CONFIGS, serpapi_key=SERPAPI_KEY)
     topk_selector = TopKSelector(embeddings=embeddings)
     claim_verifier = ClaimVerifier(llm=llm)
     

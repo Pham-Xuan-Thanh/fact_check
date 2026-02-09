@@ -38,20 +38,38 @@ class ClaimsDetector:
         self.prompt = PromptTemplate(
             input_variables=["text"],
             template="""
-            Split the following paragraph into a list of atomic, self-contained factual claims.
-            Each claim must express exactly one verifiable fact.
-            IMPORTANT: The output language must match the input language (do NOT translate).
-            For each claim, provide:
-            - exactly one short keyword/phrase for web search
-            - a list of subjects/entities mentioned in the claim (person/organization/place/thing)
-            - one primary domain/topic the claim is about
+            You are a fact-checking assistant.
 
-            Text: {text}
+            Task: Extract the MOST IMPORTANT factual claims from the paragraph, not a sentence-by-sentence split.
 
-            Return ONLY a JSON list with the following format:
+            Definitions:
+            - "Atomic claim" = one checkable proposition. It MAY include closely related details (numbers, dates, locations, sources, comparisons) only when those details are necessary to keep the claim meaningful and self-contained.
+            - "Important claim" = central to the paragraph’s message OR high-impact OR likely controversial OR includes specific quantitative/temporal info OR names notable entities OR implies causation/blame.
+
+            Rules:
+            1) Output language MUST match input language exactly. Do NOT translate.
+            2) DO NOT mechanically split by sentences.
+            3) MERGE related facts into ONE claim when they refer to the same event/trend/study finding/announcement/relationship.
+            - Combine result + supporting details (date/number/source) if they describe the same fact.
+            - If two sentences are dependent to make sense, combine them.
+            4) DROP low-value details (setup, background, vague opinions, filler, rhetorical questions) unless essential for verifying the main claim.
+            5) Output AT MOST 5 claims. If more than 5 candidates exist, select the 5 most important/check-worthy.
+            6) Each claim must be self-contained and understandable without the original paragraph.
+            7) Avoid vague claims. Prefer specific, verifiable statements. If the text is too vague, output fewer claims (0–2 is acceptable).
+
+            For each claim, output:
+            - claim_id: id of claim
+            - claim_text: 1–2 sentences max, combined if needed
+            - keyword: EXACTLY ONE short keyword/phrase suitable for web search (NOT a full sentence)
+            - subject: list of subjects/entities mentioned (person/organization/place/thing). Use [] if none.
+            - domain: EXACTLY ONE primary topic/domain (e.g., politics, public health, economics, technology, climate, crime, sports, business, science)
+
+            Input: {text}
+
+            Return ONLY a JSON array in this exact schema:
             [
-                {{"claim_id": 1, "claim_text": "...", "keyword": "...", "subject": ["..."], "domain": "..."}},
-                {{"claim_id": 2, "claim_text": "...", "keyword": "...", "subject": ["..."], "domain": "..."}}
+            {{"claim_id": 1, "claim_text": "...", "keyword": "...", "subject": ["..."], "domain": "..."}},
+            {{"claim_id": 2, "claim_text": "...", "keyword": "...", "subject": ["..."], "domain": "..."}}
             ]
             """
         )
