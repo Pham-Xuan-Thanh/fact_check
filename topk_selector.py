@@ -20,36 +20,10 @@ class TopKSelector:
         if self.embeddings is None:
             print("⚠️  Warning: No embeddings provided to TopKSelector. Relevance scoring will not work.")
 
-    def calculate_relevance_score(self, claim: str, document: Document) -> float:
-        """
-        Calculate relevance score between claim and document.
-
-        Args:
-            claim: The claim text
-            document: A document
-
-        Returns:
-            Relevance score
-        """
-        if self.embeddings is None:
-            raise ValueError("Embeddings model is required for relevance scoring. Please provide embeddings when initializing TopKSelector.")
-
-        # Use cosine similarity with embeddings
-        claim_embedding = self.embeddings.embed_query(claim)
-        doc_embedding = self.embeddings.embed_documents([document.page_content])[0]
-
-        # Normalize and calculate cosine similarity
-        claim_embedding = np.array(claim_embedding)
-        doc_embedding = np.array(doc_embedding)
-        claim_embedding = claim_embedding / np.linalg.norm(claim_embedding)
-        doc_embedding = doc_embedding / np.linalg.norm(doc_embedding)
-
-        score = np.dot(claim_embedding, doc_embedding)
-        return float(score)
-
     def select_top_k(self, claim: str, documents: List[Document], k: int) -> List[Document]:
         """
         Select top-k most relevant documents for a claim.
+        Uses batched embedding calls to minimize API usage.
 
         Args:
             claim: The claim text
@@ -62,17 +36,38 @@ class TopKSelector:
         if not documents:
             return []
 
-        # Score all documents
-        scored_docs = []
-        for doc in documents:
-            score = self.calculate_relevance_score(claim, doc)
-            scored_docs.append((score, doc))
+        if len(documents) <= k:
+            return documents
 
-        # Sort by score (descending)
-        scored_docs.sort(key=lambda x: x[0], reverse=True)
+        if self.embeddings is None:
+            print("⚠️  No embeddings, returning first k documents")
+            return documents[:k]
 
-        # Return top-k documents
-        return [doc for score, doc in scored_docs[:k]]
+        try:
+            # Single API call for claim
+            claim_embedding = np.array(self.embeddings.embed_query(claim))
+            # Single API call for ALL documents (batched)
+            corpus = [doc.page_content for doc in documents]
+            doc_embeddings = np.array(self.embeddings.embed_documents(corpus))
+
+            # Normalize
+            claim_norm = np.linalg.norm(claim_embedding)
+            if claim_norm > 0:
+                claim_embedding = claim_embedding / claim_norm
+
+            doc_norms = np.linalg.norm(doc_embeddings, axis=1, keepdims=True)
+            doc_norms = np.where(doc_norms == 0, 1, doc_norms)
+            doc_embeddings = doc_embeddings / doc_norms
+
+            # Cosine similarity (vectorized, no loop)
+            scores = np.dot(doc_embeddings, claim_embedding)
+            top_indices = scores.argsort()[-k:][::-1]
+
+            return [documents[idx] for idx in top_indices]
+
+        except Exception as e:
+            print(f"⚠️  Error in top-k selection: {str(e)[:50]}")
+            return documents[:k]
 
     def select_for_all_claims(self,
                               claims: List[Dict[str, Any]],

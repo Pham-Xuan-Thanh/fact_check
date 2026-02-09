@@ -5,15 +5,16 @@ import os
 
 # API Configuration
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', '')  # Set your API key here or via environment variable
-MODEL_NAME = os.getenv('MODEL_NAME', 'gemini-2.5-flash-lite')
+MODEL_NAME = os.getenv('MODEL_NAME', 'gemini-2.5-flash')
+EMBEDDING_MODEL = os.getenv('EMBEDDING_MODEL', 'models/gemini-embedding-001')
 
 # Server Configuration
 HOST = '0.0.0.0'
-PORT = 5000
+PORT = 8501
 
 # Retrieval Configuration
-MAX_DOCUMENTS_PER_SITE = 5
-TOP_K_DOCUMENTS = 10
+MAX_DOCUMENTS_PER_SITE = 3
+TOP_K_DOCUMENTS = 5
 
 # Site configurations with search URLs and specific selectors
 SITE_CONFIGS = [
@@ -31,4 +32,4 @@ SITE_CONFIGS = [
 ]
 
 # Optional: SerpAPI key for Google search fallback
-SERPAPI_KEY = os.getenv('SERPAPI_KEY', None)
+SERPAPI_KEY = os.getenv('SERPAPI_KEY', "")

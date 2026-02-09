@@ -3,7 +3,7 @@ langchain-community==0.4.1
 langchain-classic==1.0.1
 langchain-google-genai==4.2.0
 google-generativeai==0.8.6
-numpy==1.26.4
+numpy
 sentence-transformers==5.2.2
 crawl4ai==0.8.0
 playwright==1.58.0
@@ -15,4 +15,5 @@ flask==3.1.2
 flask-cors==6.0.2
 pytest==8.3.4
 pytest-asyncio==0.24.0
-faiss-cpu==1.9.0
+faiss-cpu
+scikit-learn

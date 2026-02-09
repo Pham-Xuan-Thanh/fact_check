@@ -9,7 +9,7 @@ from claims_detector import ClaimsDetector
 from document_retriever import DocumentRetriever
 from topk_selector import TopKSelector
 from claim_verifier import ClaimVerifier
-from config import GOOGLE_API_KEY, MODEL_NAME, SITE_CONFIGS
+from config import GOOGLE_API_KEY, MODEL_NAME, EMBEDDING_MODEL, SITE_CONFIGS
 
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 
@@ -22,19 +22,19 @@ async def main():
     
     # Initialize LLM and embeddings
     llm = ChatGoogleGenerativeAI(model=MODEL_NAME)
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    embeddings = GoogleGenerativeAIEmbeddings(model=EMBEDDING_MODEL)
     
     # Initialize components
     claims_detector = ClaimsDetector(llm=llm)
     document_retriever = DocumentRetriever(embeddings=embeddings, site_configs=SITE_CONFIGS)
-    topk_selector = TopKSelector(k=10)
+    topk_selector = TopKSelector(embeddings=embeddings)
     claim_verifier = ClaimVerifier(llm=llm)
     
     # Create pipeline
     pipeline = FactCheckPipeline(
         claims_detector=claims_detector,
         document_retriever=document_retriever,
-        topk_selector=topk_selector,
+        top_k_selector=topk_selector,
         claim_verifier=claim_verifier
     )
     
@@ -53,7 +53,7 @@ async def main():
         print('='*60)
         
         try:
-            result = await pipeline.run(text)
+            result = await pipeline.run_async(text)
             
             print(f"\nFound {len(result.get('claims', []))} claim(s):\n")
             
