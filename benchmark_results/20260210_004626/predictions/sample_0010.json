@@ -1,0 +1,13 @@
+{
+  "index": 10,
+  "statement": "Vinh dự là người Việt Nam giành được học bổng danh giá, Tường Anh mong muốn được theo chuyên ngành khoa học máy tính để phát huy thế mạnh của bản thân.",
+  "url": "https://thanhnien.vn/nu-sinh-viet-dat-hoc-bong-9-truong-dai-hoc-my-18523033021510177.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng số 0 trực tiếp xác nhận cả hai phần của tuyên bố: Tường Anh vinh dự là học sinh Việt Nam giành được học bổng danh giá và cô chọn chuyên ngành khoa học máy tính để thử nghiệm thế mạnh bản thân.",
+  "error": null,
+  "content_source": "url+context"
+}

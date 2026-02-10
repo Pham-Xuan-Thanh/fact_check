@@ -1,0 +1,13 @@
+{
+  "index": 0,
+  "statement": "Các cán bộ nhà nước đang có xu hướng qua làm cho các công ty tư nhân do mức độ đãi ngộ và mức lương cao gấp 5 lần so với các công ty Nhà nước.",
+  "url": "https://baochinhphu.vn/tap-doan-tong-cong-ty-kien-nghi-go-vuong-co-che-de-khoi-thong-nguon-luc-102230318155032879.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận có 'sự chuyển dịch lớn từ khu vực nhà nước sang tư nhân và các doanh nghiệp FDI, nơi có chế độ đãi ngộ cao hơn'. Mặc dù không đưa ra con số cụ thể về mức lương gấp 5 lần, nhưng việc đề cập đến 'chế độ đãi ngộ cao hơn' là đủ để hỗ trợ cho tuyên bố về xu hướng chuyển dịch do đãi ngộ tốt hơn.",
+  "error": null,
+  "content_source": "url+context"
+}

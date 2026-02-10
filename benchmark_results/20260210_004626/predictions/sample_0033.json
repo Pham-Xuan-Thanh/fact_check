@@ -1,0 +1,13 @@
+{
+  "index": 33,
+  "statement": "ChatGPT có thể viết được một tiểu luận tốt với thông tin đầy đủ và tương đối chính xác do nó sử dụng hệ dữ liệu nhỏ đến từ vài nghìn trang tài liệu đã được công bố khắp thế giới.",
+  "url": "https://thanhnien.vn/gen-z-viet-bai-tieu-luan-nhanh-hon-nho-chatgpt-185230325234611357.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng ChatGPT sử dụng 'hệ dữ liệu nhỏ đến từ vài nghìn trang tài liệu'. Tuy nhiên, bằng chứng [evidence_0] trích dẫn ý kiến của anh Thống nói rõ: 'ChatGPT sử dụng hệ dữ liệu lớn đến từ hàng tỉ trang tài liệu đã được công bố trên khắp thế giới'. Điều này mâu thuẫn trực tiếp với thông tin về quy mô dữ liệu được nêu trong tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 26,
+  "statement": "Chat Prompt có ưu điểm là cải thiện được kỹ năng giao tiếp, tiếp kiệm được thời gian cũng như tiền bạc, từ đó tăng hiệu quả và cho phép người dùng có trải nghiệm cá nhân hóa hơn, nhưng những sai sót về thông tin lại không được giảm đáng kể.",
+  "url": "https://tuoitre.vn/tan-dung-chat-prompt-bi-quyet-su-dung-chat-gpt-hieu-qua-20230225094154216.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng 'những sai sót về thông tin lại không được giảm đáng kể'. Tuy nhiên, bằng chứng [evidence_0] nêu rõ một trong những ưu điểm của Chat Prompt là 'giảm sai sót'. Do đó, bằng chứng mâu thuẫn trực tiếp với một phần của tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

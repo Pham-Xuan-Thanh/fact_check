@@ -1,0 +1,13 @@
+{
+  "index": 43,
+  "statement": "Xúc xích Alheira và Cataplana là những món luôn được đề xuất, gợi ý cho các thực khách ghé thăm.",
+  "url": "https://nld.com.vn/thoi-su/bo-dao-nha-suc-hut-cua-thien-duong-du-lich-20230318201717979.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] liệt kê xúc xích Alheira và Cataplana là những món ăn \"sẽ làm hài lòng thực khách\", điều này ngụ ý rằng chúng là những món được đề xuất hoặc gợi ý cho du khách. Mặc dù không sử dụng từ ngữ trực tiếp là \"luôn được đề xuất\" hay \"gợi ý\", nhưng việc chúng được đưa vào danh sách các món ăn hấp dẫn cho thấy chúng là những lựa chọn đáng thử.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 30,
+  "statement": "Hôm 16/2, Phó chủ tịch TP Cà Mau Bùi Tứ Hải đang lên kế hoạch cưỡng chế biệt thự của ông Tập, trước đó, ông đã bị xử phạt 22,5 triệu đồng, bị bắt khôi phục lại hiện trạng ban đầu.",
+  "url": "https://vnexpress.net/biet-thu-xay-trai-phep-o-ca-mau-co-the-ton-tai-mot-phan-4583926.html",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận cả hai phần của tuyên bố: ông Tập bị xử phạt 22,5 triệu đồng và buộc khôi phục hiện trạng ban đầu, và Phó chủ tịch TP Cà Mau Bùi Tứ Hải cho biết địa phương đang lên kế hoạch cưỡng chế biệt thự của ông Tập do hết thời hạn tự tháo dỡ.",
+  "error": null,
+  "content_source": "url+context"
+}

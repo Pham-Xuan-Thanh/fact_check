@@ -1,0 +1,13 @@
+{
+  "index": 37,
+  "statement": "Chương trình có sự chung tay của các cấp, ngành và doanh nghiệp, cá nhân giành cho Giáo dục Việt Nam và dự định sẽ mở rộng thực hiện với quy mô lớn hơn trong 5 năm tới.",
+  "url": "https://baotintuc.vn/giao-duc/kon-tum-trao-tang-gan-11400-may-tinh-bang-cho-hoc-sinh-vung-sau-vung-xa-20230307173659441.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng đầu tiên mô tả chương trình 'Sóng và máy tính cho em' có sự chung tay của các cấp, ngành, doanh nghiệp và cá nhân, hướng tới giáo dục Việt Nam. Bằng chứng thứ hai cung cấp thêm chi tiết về hoạt động trao tặng máy tính bảng cho học sinh vùng sâu, vùng xa trong khuôn khổ chương trình này, do Vietcombank Kon Tum tài trợ và hưởng ứng chương trình 'Sóng và máy tính cho em' do Thủ tướng Chính phủ phát động. Điều này xác nhận phần đầu của tuyên bố về sự chung tay và mục đích giáo dục. Tuy nhiên, cả hai bằng chứng đều không đề cập đến việc chương trình dự định mở rộng quy mô lớn hơn trong 5 năm tới, do đó phần này của tuyên bố không được hỗ trợ bởi bằng chứng.",
+  "error": null,
+  "content_source": "url+context"
+}

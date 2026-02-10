@@ -1,0 +1,13 @@
+{
+  "index": 15,
+  "statement": "Mạng lưới trung tâm đăng kiểm cũng cần tập trung vào các thành phố lớn, có nhu cầu cao, đồng thời buộc đóng cửa đối với các trung tâm đăng kiểm có hành vi vi phạm.",
+  "url": "https://baotintuc.vn/xa-hoi/sua-nghi-dinh-ve-dang-kiem-co-siet-co-mo-de-dam-bao-can-bang-cung-cau-20230331170107367.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp trích dẫn lời chỉ đạo của Bộ trưởng Nguyễn Văn Thắng về việc mạng lưới trung tâm đăng kiểm cần tập trung vào các thành phố lớn có nhu cầu cao, đồng thời nhấn mạnh việc buộc đóng cửa đối với các trung tâm vi phạm. Điều này hoàn toàn khớp với nội dung của tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

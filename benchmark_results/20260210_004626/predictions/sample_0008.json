@@ -1,0 +1,13 @@
+{
+  "index": 8,
+  "statement": "Mới đây, hình ảnh cậu bé ở vùng đất đỏ Tây nguyên mặc bộ đồ lấm lem với cánh tay gãy được bó bằng củi khô và nụ cười rạng rỡ của em khi được đến bệnh viện bó bột nhận hàng chục ngàn lượt tương tác trên mạng xã hội.",
+  "url": "https://thanhnien.vn/cai-ket-am-long-cho-cau-be-gay-tay-phai-bo-bang-cui-kho-185230324222741986.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng từ báo Thanh Niên xác nhận đầy đủ các yếu tố của tuyên bố: hình ảnh cậu bé Vừ A Bin ở Đắk Nông (Tây Nguyên) với cánh tay bó bằng củi khô, nụ cười rạng rỡ và việc nhận được nhiều lượt tương tác trên mạng xã hội. Thông tin về hoàn cảnh khó khăn của gia đình cũng được đề cập, phù hợp với bối cảnh của câu chuyện.",
+  "error": null,
+  "content_source": "url+context"
+}

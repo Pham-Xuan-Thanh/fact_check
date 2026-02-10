@@ -1,0 +1,13 @@
+{
+  "index": 35,
+  "statement": "Tại làng Authoison nhỏ bé miền Đông Bắc nước Pháp, đã nhiều năm qua, như để lưu dấu lịch sử, người ta đã dựng lên tượng đài tưởng niệm các chiến sĩ \"bị xử bắn để làm gương\" trong chiến tranh 1914-1918.",
+  "url": "https://tuoitre.vn/le-pantalon-loi-sam-hoi-cua-lich-su-20230310094316852.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Cả hai bằng chứng được cung cấp đều xác nhận tuyên bố rằng tại làng Authoison, miền Đông Bắc nước Pháp, đã dựng tượng đài tưởng niệm các chiến sĩ bị xử bắn để làm gương trong Chiến tranh Thế giới thứ nhất. Bằng chứng còn nêu cụ thể tên một người lính là Lucien Bersot và thông tin về việc hơn 400 quân nhân Pháp đã bị xử tử vì tội phản loạn trong cuộc chiến này.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 23,
+  "statement": "Ông Huệ yêu cầu các cơ quan từ chối lắng nghe và không cần có trách nhiệm nghiên cứu, xem xét những quy định về sở hữu.",
+  "url": "https://tuoitre.vn/uy-ban-thuong-vu-quoc-hoi-khong-tan-thanh-quy-dinh-thoi-han-so-huu-chung-cu-20230317180028903.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 1.0,
+  "reasoning": "Tuyên bố cho rằng ông Huệ yêu cầu các cơ quan từ chối lắng nghe, không cần có trách nhiệm nghiên cứu, xem xét các quy định về sở hữu. Tuy nhiên, bằng chứng [evidence_0] lại khẳng định rõ ràng ông Huệ yêu cầu các cơ quan 'lắng nghe, có trách nhiệm nghiên cứu, xem xét'. Ngoài ra, bằng chứng [evidence_1] cũng cho thấy ông Huệ nhấn mạnh sự cần thiết phải 'cân nhắc kỹ lưỡng, thận trọng trên cơ sở chính trị vững chắc, căn cứ Hiến pháp, quy định pháp luật liên quan như Bộ luật dân sự xác lập quyền sở hữu, trên cơ sở đánh giá thực tiễn hiện nay', điều này trái ngược hoàn toàn với nội dung tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

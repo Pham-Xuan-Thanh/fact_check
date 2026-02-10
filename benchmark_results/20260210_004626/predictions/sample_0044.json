@@ -1,0 +1,13 @@
+{
+  "index": 44,
+  "statement": "Thông tin 2 thanh niên lạ mặt đi xe máy, tiếp cận học sinh ở nhiều trường học tại thành phố Vinh (Nghệ An) với ý đồ xấu đã nhanh chóng lan truyền đến nhóm phụ huynh học sinh, gây nên sự hoang mang đến các phụ huynh.",
+  "url": "https://dantri.com.vn/giao-duc-huong-nghiep/khong-co-chuyen-bat-coc-hoc-sinh-tai-cac-truong-o-nghe-an-20230321163632059.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận rằng thông tin về 2 thanh niên lạ mặt đi xe máy tiếp cận học sinh với ý đồ xấu đã lan truyền trong các nhóm phụ huynh ở thành phố Vinh và gây hoang mang. Mặc dù bài báo sau đó nói về việc không có vụ bắt cóc, nhưng nó không phủ nhận việc thông tin đã lan truyền và gây hoang mang.",
+  "error": null,
+  "content_source": "url+context"
+}

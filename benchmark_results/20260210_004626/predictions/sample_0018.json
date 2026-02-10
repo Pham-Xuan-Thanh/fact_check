@@ -1,0 +1,13 @@
+{
+  "index": 18,
+  "statement": "Wesleyan University xếp hạng 18 trong các trường đại học khai phóng, thuộc bang Connecticut, Mỹ đã chấp nhận dành học bổng toàn phần với trị giá lên đến 370.000 USD cho Tường Anh.",
+  "url": "https://thanhnien.vn/nu-sinh-viet-dat-hoc-bong-9-truong-dai-hoc-my-18523033021510177.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] và [evidence_1] đều xác nhận thông tin Tường Anh nhận được học bổng toàn phần trị giá lên đến 370.000 USD từ Wesleyan University. Tuy nhiên, thông tin về việc Wesleyan University xếp hạng 18 trong các trường đại học khai phóng thuộc bang Connecticut, Mỹ không được đề cập trong các bằng chứng được cung cấp.",
+  "error": null,
+  "content_source": "url+context"
+}

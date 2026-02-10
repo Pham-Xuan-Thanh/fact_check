@@ -1,0 +1,13 @@
+{
+  "index": 32,
+  "statement": "“Chăm chỉ, đam mê với mục tiêu của mình, dám đương đầu khó khăn và vượt qua vùng an toàn của bản thân chính những yếu tố làm tiền đề cần có ở các bạn trẻ để thành công trên con đường nghiên cứu khoa học” được Tiến sĩ Lê Thị Phương chia sẻ trong một buổi talkshow ở các trường đại học.",
+  "url": "https://baotintuc.vn/nguoi-tot-viec-tot/nu-tien-si-tre-dam-me-nghien-cuu-khoa-hoc-ung-dung-20230327154928051.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp trích dẫn lời của Tiến sĩ Lê Thị Phương về các yếu tố cần có để thành công trong nghiên cứu khoa học, bao gồm sự chăm chỉ, đam mê, dám đương đầu khó khăn và vượt qua vùng an toàn. Tuyên bố được đưa ra trong một buổi talkshow tại các trường đại học cũng được xác nhận bởi nguồn tin.",
+  "error": null,
+  "content_source": "url+context"
+}

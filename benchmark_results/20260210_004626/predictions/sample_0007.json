@@ -1,0 +1,13 @@
+{
+  "index": 7,
+  "statement": "Phó Thủ tướng mong muốn trong việc nghiên cứu, phát triển các dự án năng lượng tái tạo sẽ có sự hỗ trợ của Vương quốc Anh, đồng thời nước này cũng giúp Việt Nam phát triển nông nghiệp bền vững, giúp cuộc sống của các hộ dân miền Tây thoát khỏi cảnh nghèo đói.",
+  "url": "https://baochinhphu.vn/phat-trien-kinh-te-gan-lien-voi-bao-ton-va-phat-trien-he-sinh-thai-102230412221931371.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận mong muốn của Phó Thủ tướng về sự hỗ trợ của Vương quốc Anh trong nghiên cứu, phát triển các dự án năng lượng tái tạo, đặc biệt là điện gió ngoài khơi. Bằng chứng này cũng đề cập đến việc Vương quốc Anh hỗ trợ Việt Nam phát triển nông nghiệp bền vững thông qua chuyển giao khoa học công nghệ cao và tạo điều kiện tiếp cận thị trường. Mặc dù bằng chứng không trực tiếp nói về việc giúp các hộ dân miền Tây thoát nghèo, nhưng việc phát triển năng lượng tái tạo và nông nghiệp bền vững có tiềm năng đóng góp vào mục tiêu này. Bằng chứng [evidence_1] chỉ là thông tin về website và ngày tháng, không cung cấp nội dung liên quan đến tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

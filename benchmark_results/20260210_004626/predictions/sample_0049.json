@@ -1,0 +1,13 @@
+{
+  "index": 49,
+  "statement": "“Giải thưởng Nhiếp ảnh Heritage - Hành trình Di sản” là cuộc thi nhiếp ảnh chuyên nghiệp, góp phần quảng bá hình ảnh đất nước, con người Việt Nam.",
+  "url": "https://baotintuc.vn/van-hoa/phat-dong-giai-thuong-nhiep-anh-heritage-hanh-trinh-di-san-2023-20230330115431626.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp khẳng định rằng \"Giải thưởng Nhiếp ảnh Heritage - Hành trình Di sản\" là cuộc thi nhiếp ảnh chuyên nghiệp và góp phần quảng bá hình ảnh đất nước, con người Việt Nam. Bằng chứng này đầy đủ và rõ ràng để xác nhận tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

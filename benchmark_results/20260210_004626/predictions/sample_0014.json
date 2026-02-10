@@ -1,0 +1,13 @@
+{
+  "index": 14,
+  "statement": "Về quyền trẻ em theo Luật Trẻ em năm 2016 là trẻ em có 25 quyền và 4 nhóm quyền chính: Quyền được sống còn; Quyền được tham gia; Quyền được phát triển; Quyền được bảo vệ do Chính phủ ban hành.",
+  "url": "https://plo.vn/quyen-cua-tre-em-la-nghia-vu-cua-nguoi-lon-post724615.html",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận tuyên bố rằng Luật Trẻ em năm 2016 quy định trẻ em có 25 quyền và 4 nhóm quyền chính: Quyền được sống còn; Quyền được tham gia; Quyền được phát triển; Quyền được bảo vệ. Bằng chứng này là lời kể của một người đã được tuyên truyền pháp luật và thông tin báo chí về vấn đề này.",
+  "error": null,
+  "content_source": "url+context"
+}

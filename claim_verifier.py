@@ -15,31 +15,41 @@ class ClaimVerifier:
         self.llm = llm
         self.prompt = PromptTemplate(
             input_variables=["claim", "evidence"],
-            template="""Bạn là một chuyên gia kiểm chứng thông tin. Phân tích tuyên bố dựa trên các bằng chứng được cung cấp.
+            template="""Bạn là một chuyên gia kiểm chứng thông tin. Phân tích tuyên bố CHỈ dựa trên các bằng chứng được cung cấp (không dùng kiến thức ngoài, không suy đoán, không bịa).
 
 Tuyên bố: {claim}
 
 Bằng chứng:
 {evidence}
 
+Nguyên tắc bắt buộc:
+1) Evidence-only: Chỉ dùng thông tin có trong Bằng chứng. Nếu thiếu dữ kiện then chốt để kết luận đúng/sai → NOT ENOUGH INFO.
+2) Nhạy với sai lệch nhỏ: Nếu tuyên bố sai ở bất kỳ chi tiết QUAN TRỌNG nào (con số, ngày/tháng/năm, chức vị, tên người/tổ chức, địa điểm, phạm vi “tất cả/luôn/duy nhất”, quan hệ nhân quả...) và bằng chứng cho thấy rõ → REFUTED.
+3) SUPPORTED chỉ khi bằng chứng xác nhận TRỰC TIẾP nội dung tuyên bố và không có mâu thuẫn trọng yếu.
+4) Xử lý mâu thuẫn: Nếu các bằng chứng mâu thuẫn nhau, ưu tiên nguồn uy tín hơn trong phạm vi evidence; nếu vẫn không thể kết luận chắc → NOT ENOUGH INFO và nêu rõ mâu thuẫn.
+5) Không “hợp thức hóa” bằng chứng yếu: Nếu bằng chứng chỉ nói chung chung/gián tiếp/ý kiến/không đề cập trực tiếp claim thì không đủ để SUPPORTED.
+
 Dựa trên bằng chứng, phân loại tuyên bố thành:
 - SUPPORTED (Được hỗ trợ): Bằng chứng xác nhận tuyên bố là đúng
-- REFUTED (Bị bác bỏ): Bằng chứng mâu thuẫn với tuyên bố
-- NOT ENOUGH INFO (Không đủ thông tin): Bằng chứng không đủ để xác minh tuyên bố
+- REFUTED (Bị bác bỏ): Bằng chứng mâu thuẫn với tuyên bố hoặc cho thấy chi tiết quan trọng là sai
+- NOT ENOUGH INFO (Không đủ thông tin): Bằng chứng không đủ/không liên quan trực tiếp để xác minh tuyên bố
 
-Trả lời CHÍNH XÁC theo định dạng JSON sau (không thêm markdown backticks):
+Tập trung vào các nguồn dữ liệu uy tín (báo, trang chính phủ, tài liệu chính thức) và đặc biệt chú ý các thông tin sai lệch nhỏ (con số, chức vị, mốc thời gian...).
+
+Trả lời CHÍNH XÁC theo định dạng JSON sau (không thêm markdown backticks, không thêm bất kỳ nội dung nào khác ngoài JSON):
 {{
     "label": "SUPPORTED hoặc REFUTED hoặc NOT ENOUGH INFO",
     "confidence": 0.85,
-    "reasoning": "Giải thích ngắn gọn bằng tiếng Việt về lý do phân loại",
+    "reasoning": "Giải thích ngắn gọn bằng tiếng Việt về lý do phân loại, nêu rõ chi tiết nào trong claim được hỗ trợ/bị mâu thuẫn/thiếu thông tin",
     "evidence_used": [
         {{
             "evidence_id": "doc_1_wikipedia",
-            "snippet": "Trích dẫn ngắn từ tài liệu hỗ trợ kết luận",
-            "relevance": "Tại sao đoạn này liên quan"
+            "snippet": "Trích dẫn ngắn từ bằng chứng liên quan nhất (ưu tiên nguyên văn)",
+            "relevance": "Tại sao đoạn này hỗ trợ/bác bỏ/cho thấy không đủ thông tin"
         }}
     ]
 }}
+
 """
         )
         self.chain = LLMChain(llm=self.llm, prompt=self.prompt)

@@ -1,0 +1,13 @@
+{
+  "index": 4,
+  "statement": "U20 Việt Nam chơi phòng ngự phản công trong hiệp 2 trận đấu với Qatar.",
+  "url": "https://baochinhphu.vn/u20-chau-a-2023-lien-tiep-thang-tran-nhung-ngoi-sao-vang-doc-chiem-ngoi-dau-bang-tu-than-102230304235901403.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] mô tả U20 Việt Nam chơi tấn công chủ động hơn trong hiệp 2 và sức ép từ U20 Qatar giảm đi, điều này mâu thuẫn với tuyên bố rằng họ chơi phòng ngự phản công. Bằng chứng [evidence_1] không cung cấp thông tin về chiến thuật trong hiệp 2.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 31,
+  "statement": "Bộ Phát triển kỹ thuật số Nga đã thừa nhận có tới 500.000 nhân viên trong lĩnh vực công nghệ thông tin của Nga đã rời khỏi nước vào tháng trước.",
+  "url": "https://tuoitre.vn/nga-thu-hut-chuyen-gia-cong-nghe-thong-tin-bang-chinh-sach-visa-20230315191515991.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố nói rằng Bộ Phát triển kỹ thuật số Nga đã thừa nhận có tới 500.000 nhân viên công nghệ thông tin rời khỏi nước vào tháng trước. Tuy nhiên, bằng chứng [evidence_0] chỉ đề cập đến việc Bộ trưởng Bộ Phát triển kỹ thuật số Nga Maksut Shadayev thừa nhận có tới 100.000 nhân viên trong lĩnh vực công nghệ thông tin đã rời khỏi đất nước vào năm ngoái, chứ không phải tháng trước và không có con số 500.000.",
+  "error": null,
+  "content_source": "url+context"
+}

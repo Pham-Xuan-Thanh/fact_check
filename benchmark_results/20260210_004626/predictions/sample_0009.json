@@ -1,0 +1,13 @@
+{
+  "index": 9,
+  "statement": "Trước đó, có tin đồn Khi ta hai lăm rời rạp vì có doanh thu thấp nhưng người đại diện viết trên trang cá nhân rằng khi ta hai lăm vẫn chưa rời rạp, phim vẫn có những suất chiếu tùy theo tình hình kinh doanh của từng cụm rạp.",
+  "url": "https://tuoitre.vn/khi-ta-hai-lam-phu-nhan-tin-don-roi-rap-nha-ba-nu-thu-460-ti-20230321183535734.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trích dẫn trực tiếp từ bài báo của Tuổi Trẻ Online, trong đó nêu rõ 'Phim vẫn có những suất chiếu tùy theo tình hình kinh doanh của từng cụm rạp' và 'Trước đó, có tin đồn Khi ta hai lăm rời rạp vì có doanh thu thấp'. Điều này trực tiếp xác nhận phần lớn nội dung của tuyên bố, bao gồm cả việc có tin đồn và việc ê-kíp phủ nhận tin đồn đó bằng cách khẳng định phim vẫn đang chiếu.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 45,
+  "statement": "Về bất động sản và thế chấp theo tỉ phú Musk đây là vấn đề nghiêm trọng nhất hiện nay.",
+  "url": "https://tuoitre.vn/ti-phu-elon-musk-va-bill-ackman-canh-bao-rui-ro-cua-bat-dong-san-the-chap-20230329144627095.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng tỉ phú Elon Musk xem vấn đề bất động sản và thế chấp là vấn đề nghiêm trọng nhất hiện nay. Bằng chứng [evidence_0] trích dẫn trực tiếp Elon Musk nói: 'vấn đề nghiêm trọng nhất hiện nay là về bất động sản và thế chấp'. Bằng chứng [evidence_1] cũng củng cố quan điểm này khi Musk nhấn mạnh rằng các khoản vay tín chấp trên bảng cân đối kế toán của các ngân hàng 'Đây mới thực sự là vấn đề'.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 29,
+  "statement": "Theo khoản 1 Điều 56 Luật Đất đai năm 2003, doanh nghiệp nhà nước phải tiến hành thẩm định giá, xác định giá trị chuyển nhượng đất dự án và đưa ra đấu giá theo quy định pháp luật trong việc chuyển nhượng đất dự án.",
+  "url": "https://tuoitre.vn/vien-kiem-sat-de-nghi-bac-khang-cao-vu-ban-re-du-an-phuoc-kien-va-ven-song-20230328114000798.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "NOT ENOUGH INFO",
+  "predicted_id": 2,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng duy nhất [evidence_0] có đề cập đến việc chuyển nhượng đất dự án của doanh nghiệp nhà nước phải thẩm định giá, xác định giá trị theo giá thị trường và đấu giá theo quy định pháp luật. Tuy nhiên, bằng chứng này không trích dẫn cụ thể Điều 56 khoản 1 của Luật Đất đai năm 2003 như tuyên bố. Do đó, không thể xác minh chính xác tuyên bố dựa trên thông tin được cung cấp.",
+  "error": null,
+  "content_source": "url+context"
+}

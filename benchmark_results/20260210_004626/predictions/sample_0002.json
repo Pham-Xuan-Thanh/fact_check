@@ -1,0 +1,13 @@
+{
+  "index": 2,
+  "statement": "Phần vỏ bánh được làm rất công phu, từ giai đoạn xay gạo đến cuốn bánh hết tổng 4 tiếng đồng hồ.",
+  "url": "https://vnexpress.net/quan-banh-cuon-trong-ngo-nho-re-nhat-ha-noi-4580711.html",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "NOT ENOUGH INFO",
+  "predicted_id": 2,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng có đề cập đến việc chuẩn bị nguyên liệu và tâm đắc với lớp vỏ bánh, nhưng không cung cấp thông tin cụ thể về thời gian xay gạo hay cuốn bánh, do đó không đủ để xác minh tuyên bố về tổng thời gian 4 tiếng.",
+  "error": null,
+  "content_source": "url+context"
+}

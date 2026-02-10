@@ -1,0 +1,13 @@
+{
+  "index": 6,
+  "statement": "Israel đang gửi viện trợ nhân đạo và hệ thống phòng thủ cho Ukraine, nhưng không gửi vũ khí chiến đấu.",
+  "url": "https://baotintuc.vn/quan-su/israel-giai-thich-ly-do-khong-cap-vu-khi-cho-ukraine-20230318064455632.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp khẳng định rằng Israel đang gửi viện trợ nhân đạo và các hệ thống phòng thủ cho Ukraine, đồng thời không gửi vũ khí chiến đấu. Thủ tướng Israel cũng xác nhận thông tin này.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 17,
+  "statement": "Học sinh Nguyễn Anh Dũng đạt thành tích cao nhất của một học sinh ở tỉnh Đắk Nông kể từ khi thành lập tỉnh đó là giải nhì, năm trước tình cũng có một em đạt giải 3 môn toán.",
+  "url": "https://dantri.com.vn/giao-duc-huong-nghiep/hoc-sinh-gioi-quoc-gia-o-dak-nong-duoc-tao-dieu-kien-on-luyen-tot-nhat-20230320083714065.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] và [evidence_1] đều xác nhận rằng học sinh Nguyễn Anh Dũng đã đạt giải nhì trong Kỳ thi chọn học sinh giỏi quốc gia, và đây là thành tích cao nhất của một học sinh ở tỉnh Đắk Nông kể từ khi thành lập tỉnh. Tuy nhiên, thông tin về việc 'năm trước tình cũng có một em đạt giải 3 môn toán' không được đề cập trong các bằng chứng được cung cấp, nhưng phần chính của tuyên bố đã được xác nhận.",
+  "error": null,
+  "content_source": "url+context"
+}

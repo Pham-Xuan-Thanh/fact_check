@@ -1,0 +1,13 @@
+{
+  "index": 19,
+  "statement": "Chủ đầu tư không có hành động cũng như văn bản đốc thúc nhà thầu đảm bảo tiến độ thi công, nếu không đơn vị này sẽ có biên bản xử phạt.",
+  "url": "https://dantri.com.vn/xa-hoi/duong-gan-8km-thi-cong-2-nam-chua-xong-dan-khon-kho-hit-bui-20230325103611387.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "NOT ENOUGH INFO",
+  "predicted_id": 2,
+  "confidence": 0.9,
+  "reasoning": "Các bằng chứng được cung cấp chỉ đề cập đến việc đơn vị thi công không có biện pháp giảm bụi và việc người dân bức xúc phản ánh. Không có thông tin nào trong các bằng chứng này nói về việc chủ đầu tư có hành động hay văn bản đốc thúc nhà thầu về tiến độ thi công, cũng như việc có biên bản xử phạt hay không. Do đó, không đủ thông tin để xác minh tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

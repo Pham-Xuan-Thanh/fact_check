@@ -1,0 +1,13 @@
+{
+  "index": 40,
+  "statement": "Nữ tài xế lái xe Porsche 4 chỗ chạy trên đường dẫn cao tốc Long Thành bất ngờ lao vào làn xe máy gây tai nạn khiến hai người bị thương vào trưa ngày 19/3.",
+  "url": "https://vnexpress.net/oto-porsche-tong-2-xe-may-tren-duong-dan-cao-toc-4583070.html",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng nữ tài xế lái xe Porsche gây tai nạn, tuy nhiên, bằng chứng [evidence_0] nêu rõ 'nam tài xế lái xe Porsche'. Do đó, thông tin về giới tính của tài xế trong tuyên bố là sai.",
+  "error": null,
+  "content_source": "url+context"
+}

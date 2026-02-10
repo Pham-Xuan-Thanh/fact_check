@@ -1,0 +1,13 @@
+{
+  "index": 13,
+  "statement": "Đội bóng nữ mạnh nhất khu vực châu Á là đội tuyển nữ Úc hiện tại đã thay thế vị trí thứ 12 của tuyển nữ CHDCND Triều Tiên trên BXH FIFA.",
+  "url": "https://nld.com.vn/the-thao/tuyen-nu-trieu-tien-bi-fifa-gach-ten-tuyen-viet-nam-huong-loi-20230325172002099.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] cho biết tuyển nữ CHDCND Triều Tiên đứng thứ 10 trên BXH FIFA và là đội mạnh nhất châu Á trước khi bị loại. Bằng chứng này cũng khẳng định tuyển nữ Úc đã thay thế vị trí thứ 10 của họ và trở thành đội bóng mạnh nhất châu Á. Tuy nhiên, tuyên bố lại nói rằng tuyển nữ Úc đã thay thế vị trí thứ 12 của CHDCND Triều Tiên. Do đó, có mâu thuẫn về thứ hạng cụ thể được đề cập trong tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

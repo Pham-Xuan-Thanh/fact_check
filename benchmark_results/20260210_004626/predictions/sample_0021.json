@@ -1,0 +1,13 @@
+{
+  "index": 21,
+  "statement": "Nga đã tiến được vào nhà máy AZOM, một trong những nhà máy kim loại màu lớn nhất từ thời Liên Xô cũ được thành lập vào năm 1896.",
+  "url": "https://dantri.com.vn/the-gioi/nga-tien-vao-phao-dai-duoi-long-dat-ukraine-quyet-khang-cu-toi-cung-20230329063842783.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.95,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp khẳng định rằng các binh sĩ Nga đã tiến vào bên trong khuôn viên nhà máy AZOM, một nhà máy kim loại màu lớn từ thời Liên Xô cũ. Thông tin này khớp hoàn toàn với tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

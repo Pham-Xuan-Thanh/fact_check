@@ -1,0 +1,13 @@
+{
+  "index": 27,
+  "statement": "ChatGPT có thể được sử dụng để ra câu hỏi và bài tập cho học sinh, đồng thời giúp giáo viên chấm bài và đánh giá học lực của từng em.",
+  "url": "https://thanhnien.vn/gen-z-viet-bai-tieu-luan-nhanh-hon-nho-chatgpt-185230325234611357.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.95,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp khẳng định ChatGPT có thể được sử dụng để tạo câu hỏi và bài tập cho học sinh, cũng như hỗ trợ giảng viên tạo bài giảng và tài liệu học tập. Điều này hoàn toàn khớp với tuyên bố được đưa ra.",
+  "error": null,
+  "content_source": "url+context"
+}

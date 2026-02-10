@@ -1,0 +1,13 @@
+{
+  "index": 3,
+  "statement": "Bộ xương bản sao được đưa đến Lodon bằng cách nghép thành con hoàn chỉnh rồi vận chuyển đến.",
+  "url": "https://baotintuc.vn/the-gioi/trung-bay-ban-sao-bo-xuong-hoa-thach-cua-loai-khung-long-khong-lo-tai-london-20230330152500757.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "NOT ENOUGH INFO",
+  "predicted_id": 2,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố nói về cách thức vận chuyển bộ xương bản sao đến London. Tuy nhiên, các bằng chứng được cung cấp chỉ đề cập đến việc bộ xương bản sao được trưng bày tại London và nguồn gốc của nó (tìm thấy ở Argentina). Không có thông tin nào trong các bằng chứng nói về việc bộ xương được ghép thành con hoàn chỉnh rồi vận chuyển hay cách thức vận chuyển cụ thể.",
+  "error": null,
+  "content_source": "url+context"
+}

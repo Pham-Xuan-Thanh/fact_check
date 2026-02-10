@@ -1,0 +1,13 @@
+{
+  "index": 11,
+  "statement": "Sinh viên các trường sẽ thực hiện đồ án theo nhu cầu đặt hàng  trên 1 lĩnh vực duy nhất.",
+  "url": "https://baotintuc.vn/giao-duc/nhom-7-truong-dai-hoc-khoi-ky-thuat-ky-ket-chuyen-giao-cong-nghe-20230331164203440.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] cho thấy nhóm 7 trường Đại học kỹ thuật tập trung đề xuất đặt hàng các đề tài nghiên cứu, nhiệm vụ khoa học công nghệ liên ngành, liên lĩnh vực, liên trường. Điều này mâu thuẫn với tuyên bố rằng sinh viên chỉ thực hiện đồ án trên 1 lĩnh vực duy nhất.",
+  "error": null,
+  "content_source": "url+context"
+}

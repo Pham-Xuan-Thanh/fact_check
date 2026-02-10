@@ -1,0 +1,13 @@
+{
+  "index": 34,
+  "statement": "Hưởng ứng chương trình hết sức quan trọng và có ý nghĩa nhân văn sâu sắc này, tính đến hết tháng 2/2023, 128 đơn vị đã ủng hộ để hỗ trợ xây dựng 10.184 căn nhà, tương đương 521,193 tỷ đồng, trong đó công ty xây dựng Tiến Đạt ủng hộ nhiều nhất 100 tỷ đồng.",
+  "url": "https://tienphong.vn/bo-cong-an-ban-giao-nha-tinh-nghia-tang-ho-ngheo-o-nghe-an-post1519784.tpo#1519784|zone-timeline-12|27",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "NOT ENOUGH INFO",
+  "predicted_id": 2,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] xác nhận số lượng đơn vị ủng hộ (128), số nhà được xây dựng (10.184) và tổng số tiền (521,193 tỷ đồng) tính đến hết tháng 2/2023. Tuy nhiên, bằng chứng này không đề cập đến công ty xây dựng Tiến Đạt hay số tiền 100 tỷ đồng mà công ty này đã ủng hộ. Bằng chứng [evidence_1] chỉ là thông tin về trang báo và các chuyên mục, không cung cấp dữ liệu liên quan đến tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 12,
+  "statement": "Trong dịp kỷ niệm 10 năm thành lập (năm 2002 tại nhà Văn hóa TP.HCM) Đài đã nhận Huân chương lao động hạng Nhì (năm 1997), Huân chương lao động hạng Nhất.",
+  "url": "https://nld.com.vn/chinh-tri/30-nam-bat-benh-ong-troi-va-thuc-cung-dong-song-20230330172133429.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận rằng Đài Khí tượng thủy văn khu vực Nam Bộ đã nhận Huân chương Lao động hạng Nhì (năm 1997) và Huân chương Lao động hạng Nhất trong dịp kỷ niệm 10 năm thành lập (năm 2002). Tuyên bố không đề cập đến địa điểm tổ chức (nhà Văn hóa TP.HCM), nhưng thông tin về các huân chương và thời điểm nhận được là hoàn toàn trùng khớp.",
+  "error": null,
+  "content_source": "url+context"
+}

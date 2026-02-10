@@ -1,0 +1,13 @@
+{
+  "index": 22,
+  "statement": "Các nạn nhân còn lại của vụ nổ đều thuộc diện hộ nghèo và đang được điều trị tại bệnh viện.",
+  "url": "https://nld.com.vn/thoi-su/nguoi-thu-3-vu-no-dau-dan-o-kon-tum-tu-vong-20230328104230882.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp khẳng định rằng tất cả các nạn nhân còn lại đang được điều trị tại bệnh viện và đều thuộc diện hộ nghèo. Bằng chứng [evidence_1] liệt kê các nạn nhân bị thương và tử vong, tuy không đề cập trực tiếp đến tình trạng hộ nghèo, nhưng không mâu thuẫn với thông tin này.",
+  "error": null,
+  "content_source": "url+context"
+}

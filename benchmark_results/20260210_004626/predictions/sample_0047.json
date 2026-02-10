@@ -1,0 +1,13 @@
+{
+  "index": 47,
+  "statement": "Nhật Bản đã mời 1 đội bóng hàng đầu của Nam Mỹ là Uruguay tham gia giải đấu giao hữu Kirin Cup, việc này giúp cho Nhật Bản có thể kiểm tra lại đội hình cho những sự kiến sắp tới.",
+  "url": "https://tienphong.vn/nhan-dinh-nhat-ban-vs-colombia-17h00-ngay-283-khong-tha-colombia-post1521149.tpo",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận tuyên bố rằng Nhật Bản đã mời Colombia và Uruguay tham gia giải đấu giao hữu Kirin Cup để kiểm tra đội hình cho các sự kiện sắp tới. Bằng chứng này cũng chỉ ra rằng đây là hai đội bóng hàng đầu của Nam Mỹ.",
+  "error": null,
+  "content_source": "url+context"
+}

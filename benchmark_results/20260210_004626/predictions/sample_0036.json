@@ -1,0 +1,13 @@
+{
+  "index": 36,
+  "statement": "Bà Bùi Thị Ngọc Hiếu sinh năm 1974, Phó Giám đốc Sở Du lịch Thành phố Hồ Chí Minh đánh giá tại hội nghị, Trung Quốc là một trong những thị trường trọng điểm đối với ngành du lịch thành phố, bà còn cho biết thêm công ty du lịch Trung Quốc có thể tham gia Hội chợ Du lịch Quốc tế Thành phố Hồ Chí Minh năm 2023 sẽ diễn ra vào tháng 9 hay đa dạng hoạt động quảng bá, tiếp thị du lịch trong và ngoài nước của Thành phố Hồ Chí Minh.",
+  "url": "https://baotintuc.vn/du-lich/tp-ho-chi-minh-nhon-nhip-thi-truong-du-lich-20230323083458605.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp trích dẫn lời bà Bùi Thị Ngọc Hiếu nói về việc công ty du lịch Trung Quốc có thể tham gia Hội chợ Du lịch Quốc tế Thành phố Hồ Chí Minh năm 2023 và các hoạt động quảng bá, tiếp thị du lịch. Điều này xác nhận phần lớn nội dung của tuyên bố. Tuy nhiên, bằng chứng không đề cập đến việc bà Hiếu sinh năm 1974 hay chức danh Phó Giám đốc Sở Du lịch Thành phố Hồ Chí Minh, cũng như việc bà đánh giá Trung Quốc là một trong những thị trường trọng điểm.",
+  "error": null,
+  "content_source": "url+context"
+}

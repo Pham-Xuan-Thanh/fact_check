@@ -1,0 +1,13 @@
+{
+  "index": 39,
+  "statement": "Ông Đỗ Văn Chí là người đàn ông tóc như nghệ sĩ và có đam mê tái chế đồ chơi cho trẻ con.",
+  "url": "https://thanhnien.vn/nguoi-chuyen-tai-che-hang-bo-di-thanh-do-choi-cho-tre-185230330014230623.htm",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng đầu tiên mô tả ông Đỗ Văn Chí là 'người đàn ông tóc như nghệ sĩ' và ông đang thực hiện việc 'chế xe này lại cho đứa con', cho thấy ông có đam mê tái chế đồ vật. Bằng chứng thứ hai khẳng định thêm đam mê này khi ông Chí bày tỏ mong muốn 'làm ra thật nhiều sản phẩm, để phục vụ cho các trẻ em, các học sinh' từ việc tái chế.",
+  "error": null,
+  "content_source": "url+context"
+}

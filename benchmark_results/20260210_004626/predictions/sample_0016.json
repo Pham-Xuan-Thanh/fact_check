@@ -1,0 +1,13 @@
+{
+  "index": 16,
+  "statement": "Theo Dự án 585, BS Hải sẽ ở lại BVĐK Như Xuân ba năm từ 2023-2025, anh đang ấp ủ nhiều dự định để nâng cao hơn nữa chất lượng khám chữa bệnh cho người dân nơi này.",
+  "url": "https://plo.vn/chang-bac-si-tre-bo-pho-len-nui-voi-nguoi-ngheo-post721297.html",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận tuyên bố. Đoạn trích dẫn nêu rõ: \"Theo Dự án 585, BS Hải sẽ ở lại BVĐK Như Xuân ba năm. Với sức trẻ và sự nhiệt huyết, anh đang ấp ủ nhiều dự định để nâng cao hơn nữa chất lượng khám chữa bệnh cho người dân nơi này.\". Mặc dù tuyên bố đề cập đến khoảng thời gian 2023-2025, bằng chứng chỉ nói chung là \"ba năm\", nhưng điều này vẫn đủ để hỗ trợ phần lớn của tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}

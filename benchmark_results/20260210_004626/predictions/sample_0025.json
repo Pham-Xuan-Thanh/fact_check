@@ -1,0 +1,13 @@
+{
+  "index": 25,
+  "statement": "Lễ hội giao lưu văn hóa Việt – Nhật và Ngày hội việc làm Nhật Bản 2023 có nhiều hoạt động giao lưu văn hoá đặc sắc chào mừng kỷ niệm 50 năm thiết lập quan hệ ngoại giao Việt Nam – Nhật Bản.",
+  "url": "https://plo.vn/500-vi-tri-viec-lam-tai-le-hoi-giao-luu-van-hoa-viet-nhat-post723095.html",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trực tiếp xác nhận rằng Lễ hội giao lưu văn hóa Việt – Nhật và Ngày hội việc làm Nhật Bản 2023 đã diễn ra và có nhiều hoạt động giao lưu văn hóa đặc sắc chào mừng kỷ niệm 50 năm thiết lập quan hệ ngoại giao Việt Nam – Nhật Bản. Bằng chứng [evidence_1] cũng đề cập đến sự kiện này và nhấn mạnh về các cơ hội việc làm tại Nhật Bản trong khuôn khổ lễ hội, điều này phù hợp với bản chất của một sự kiện giao lưu văn hóa.",
+  "error": null,
+  "content_source": "url+context"
+}

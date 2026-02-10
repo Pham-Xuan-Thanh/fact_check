@@ -1,0 +1,13 @@
+{
+  "index": 24,
+  "statement": "Bing đã tăng 8 lần trên toàn cầu sau khi tích hợp AI, trong khi lượt tải Google giảm 2% và đã vượt qua Google về thị phần kể từ khi tích hợp AI.",
+  "url": "https://baotintuc.vn/dien-tu-vien-thong/microsoft-tang-kha-nang-canh-tranh-voi-googletren-thi-truong-tim-kiem-20230323150504561.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng Bing đã tăng 8 lần và vượt qua Google về thị phần. Tuy nhiên, bằng chứng chỉ ra rằng lượt tải Bing đã tăng 8 lần, trong khi lượt truy cập Bing tăng 15,8% và lượt truy cập Google giảm 1%. Không có thông tin nào trong bằng chứng nói về việc Bing vượt qua Google về thị phần, và số liệu tăng trưởng lượt tải không đồng nhất với tăng trưởng lượt truy cập.",
+  "error": null,
+  "content_source": "url+context"
+}

@@ -1,0 +1,13 @@
+{
+  "index": 42,
+  "statement": "Fernanda Avelar Santos, nhà địa chất học của Đại học Liên bang Parana ở Brazil, đã phát hiện ra một kiểu kiến tạo địa chất mới được tạo thành từ rác thải nhựa trên đảo Trindade.",
+  "url": "https://vnexpress.net/da-nhua-hinh-thanh-tren-hon-dao-ngoai-khoi-4584043.html",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.95,
+  "reasoning": "Các bằng chứng được cung cấp đều xác nhận tuyên bố. Cụ thể, bằng chứng 0 và 1 đều nêu rõ Fernanda Avelar Santos, một nhà địa chất học của Đại học Liên bang Parana, đã phát hiện ra đá hình thành từ rác thải nhựa trên đảo Trindade, Brazil. Điều này cho thấy sự tồn tại của một kiểu kiến tạo địa chất mới do ô nhiễm nhựa.",
+  "error": null,
+  "content_source": "url+context"
+}

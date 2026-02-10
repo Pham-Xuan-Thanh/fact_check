@@ -1,0 +1,13 @@
+{
+  "index": 28,
+  "statement": "Trường học đã tổ chức dạy chéo buổi, bố trí giáo viên kiêm nhiệm để đáp ứng yêu cầu của chương trình giáo dục phổ thông 2018 trong điều kiện thiếu phòng học, thiếu giáo viên.",
+  "url": "https://plo.vn/tim-cach-go-kho-khi-thuc-hien-chuong-trinh-moi-post724453.html",
+  "ground_truth_id": 0,
+  "ground_truth_label": "SUPPORTED",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_1] trực tiếp khẳng định rằng 'Trong điều kiện thiếu phòng học, thiếu giáo viên, trường học đã tổ chức dạy chéo buổi, bố trí giáo viên kiêm nhiệm để đáp ứng yêu cầu của chương trình giáo dục phổ thông 2018'. Điều này hoàn toàn khớp với tuyên bố được đưa ra.",
+  "error": null,
+  "content_source": "url+context"
+}

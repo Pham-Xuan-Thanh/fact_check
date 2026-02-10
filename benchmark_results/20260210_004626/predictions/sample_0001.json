@@ -1,0 +1,13 @@
+{
+  "index": 1,
+  "statement": "Sau khi Takeoff qua đời, hàng loạt mâu thuẫn gia đình kéo đến khiến cả hai nam rapper bất hòa và mối quan hệ không cải thiện kể từ đó. ",
+  "url": "https://nld.com.vn/giai-tri/hai-rapper-danh-nhau-o-hau-truong-grammy-2023-20230207102213987.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 0.95,
+  "reasoning": "Bằng chứng số 0 trực tiếp khẳng định rằng sau khi Takeoff qua đời, hai rapper bất hòa và mối quan hệ không cải thiện kể từ đó. Bằng chứng số 1 cung cấp thêm bối cảnh về mối quan hệ trước đây của họ là bạn tốt, điều này càng củng cố cho tuyên bố về sự bất hòa sau cái chết của Takeoff.",
+  "error": null,
+  "content_source": "url+context"
+}

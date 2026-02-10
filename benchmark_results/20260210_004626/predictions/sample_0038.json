@@ -1,0 +1,13 @@
+{
+  "index": 38,
+  "statement": "Điều kiện các bạn trẻ dễ dàng tiếp cận hơn về các giá trị là thông qua sách vở, hình thức tuy khó tiếp cận nhưng lại có hiệu quả cao.\n",
+  "url": "https://baotintuc.vn/van-hoa/dua-van-hoa-lich-su-gan-hon-voi-thanh-thieu-nhi-qua-nhung-giai-phap-so-20230324165627885.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng sách vở là hình thức khó tiếp cận nhưng hiệu quả cao để truyền tải giá trị cho giới trẻ. Tuy nhiên, bằng chứng [evidence_0] lại nhấn mạnh sự cần thiết của việc đưa các nội dung giáo dục lịch sử, văn hóa đến gần hơn với thanh niên thông qua các giải pháp số, với mục tiêu làm cho hình thức tiếp cận trở nên gần gũi, dễ nhớ, dễ tiếp cận và dễ tham gia hơn. Điều này ngụ ý rằng các phương pháp truyền thống như sách vở có thể không phải là cách dễ dàng nhất để tiếp cận giới trẻ trong bối cảnh hiện nay, và các giải pháp số đang được ưu tiên để tăng tính dễ tiếp cận.",
+  "error": null,
+  "content_source": "url+context"
+}

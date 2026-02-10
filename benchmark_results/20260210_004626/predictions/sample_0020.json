@@ -1,0 +1,13 @@
+{
+  "index": 20,
+  "statement": "Trong phim còn có cảnh Tố đến tiệm tóc tìm Nhài và biết được Nhài đã trở về, đồng thời cô cũng đưa con trai 2 tuổi từ miền Nam ra ở cùng mình.",
+  "url": "https://thanhnien.vn/phim-duoi-bong-cay-hanh-phuc-tap-45-dat-lam-gi-khien-son-soc-185230329122414065.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "SUPPORTED",
+  "predicted_id": 0,
+  "confidence": 1.0,
+  "reasoning": "Bằng chứng [evidence_0] trích dẫn trực tiếp từ bài báo trên Thanh Niên mô tả chính xác nội dung của tuyên bố: \"Chụp màn hình Phim Dưới bóng cây hạnh phúc còn có cảnh Tố lại đến tiệm tóc tìm Nhài và được biết Nhài đã trở về khiến anh mừng rỡ chạy đến nhà cô. Nhài đưa con trai từ miền Nam ra ở cùng mình.\"",
+  "error": null,
+  "content_source": "url+context"
+}

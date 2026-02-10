@@ -1,0 +1,13 @@
+{
+  "index": 46,
+  "statement": "Đề cập đến bài học từ khủng hoảng Ngân hàng Silicon Valley, Mỹ, Chủ tịch Quốc hội Vương Đình Huệ cho biết, Chính phủ Mỹ cam kết đảm bảo cho những người gửi tiền với điều kiện phải có tài sản bảo đảm trị giá trên 1.000 USD.",
+  "url": "https://plo.vn/tim-hieu-bai-hoc-silicon-valley-bo-sung-kinh-nghiem-xu-ly-ngan-hang-yeu-kem-viet-nam-post724607.html",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng duy nhất được cung cấp (bài báo từ plo.vn) có trích dẫn phát biểu của Chủ tịch Quốc hội Vương Đình Huệ. Tuy nhiên, đoạn trích dẫn này lại mâu thuẫn với tuyên bố về điều kiện đảm bảo cho người gửi tiền. Cụ thể, tuyên bố nói rằng Chính phủ Mỹ cam kết đảm bảo cho người gửi tiền với điều kiện phải có tài sản bảo đảm trị giá trên 1.000 USD. Trong khi đó, bằng chứng lại ghi rõ: \"Chính phủ Mỹ cam kết đảm bảo cho những người gửi tiền và sử dụng nguồn lực tài chính từ Quỹ Bảo hiểm tiền gửi với điều kiện phải có tài sản bảo đảm.\" Bản thân cụm từ \"có tài sản bảo đảm\" đã không rõ ràng và không chỉ ra một ngưỡng giá trị cụ thể như \"trên 1.000 USD\". Thậm chí, nếu hiểu \"có tài sản bảo đảm\" là một điều kiện, thì nó vẫn không khớp với tuyên bố về mức giá trị cụ thể. Quan trọng hơn, bằng chứng không hề đề cập đến con số 1.000 USD.",
+  "error": null,
+  "content_source": "url+context"
+}

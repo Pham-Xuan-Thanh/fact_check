@@ -1,0 +1,32 @@
+ViFactCheck Benchmark Report
+Date: 2026-02-10T00:51:16.371141
+Model: gemini-2.5-flash-lite
+======================================================================
+
+Total samples:     50
+Evaluated samples: 50
+Errors:            0
+
+Accuracy:          0.5600
+F1 (macro):        0.5436
+F1 (weighted):     0.5221
+Precision (macro): 0.6458
+Recall (macro):    0.6083
+
+Classification Report:
+                 precision    recall  f1-score   support
+
+      SUPPORTED       0.44      1.00      0.61        14
+        REFUTED       0.83      0.62      0.71        16
+NOT ENOUGH INFO       0.67      0.20      0.31        20
+
+       accuracy                           0.56        50
+      macro avg       0.65      0.61      0.54        50
+   weighted avg       0.66      0.56      0.52        50
+
+
+Confusion Matrix (rows=true, cols=pred):
+Labels: ['SUPPORTED', 'REFUTED', 'NOT ENOUGH INFO']
+  [14, 0, 0]
+  [4, 10, 2]
+  [14, 2, 4]

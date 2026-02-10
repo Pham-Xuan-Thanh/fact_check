@@ -1,0 +1,13 @@
+{
+  "index": 5,
+  "statement": "Báo Tuổi Trẻ đã có buổi phỏng vấn vào tối ngày 29/3 với Minh Hà - bà xã của Lý Hải về việc phủ nhận chuyện chồng mình có liên quan đến vụ đánh bạc ở Vĩnh Phúc.",
+  "url": "https://dantri.com.vn/giai-tri/ba-xa-ly-hai-len-tieng-truoc-tin-don-chong-bi-bat-vi-danh-bac-o-vinh-phuc-20230329231445210.htm",
+  "ground_truth_id": 1,
+  "ground_truth_label": "REFUTED",
+  "predicted_label": "REFUTED",
+  "predicted_id": 1,
+  "confidence": 0.9,
+  "reasoning": "Tuyên bố cho rằng báo Tuổi Trẻ đã phỏng vấn Minh Hà, nhưng bằng chứng chỉ ra rằng Minh Hà đã chia sẻ thông tin với báo Dân trí vào tối ngày 29/3. Không có bằng chứng nào đề cập đến việc báo Tuổi Trẻ thực hiện buổi phỏng vấn này.",
+  "error": null,
+  "content_source": "url+context"
+}

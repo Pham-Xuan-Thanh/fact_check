@@ -1,0 +1,13 @@
+{
+  "index": 48,
+  "statement": "Ông Putin cũng cho rằng sẽ có những hình phạt thích đáng cho Mỹ về những hành động phá hoại đó.",
+  "url": "https://thanhnien.vn/tong-thong-putin-chi-ten-nuoc-dung-sau-vu-no-duong-ong-nord-stream-185230326075245785.htm",
+  "ground_truth_id": 2,
+  "ground_truth_label": "NOT ENOUGH INFO",
+  "predicted_label": "NOT ENOUGH INFO",
+  "predicted_id": 2,
+  "confidence": 0.9,
+  "reasoning": "Bằng chứng [evidence_0] và [evidence_1] chỉ đề cập đến việc ông Putin đồng ý với kết luận rằng tình báo Mỹ đứng sau vụ nổ đường ống Nord Stream và cho rằng sự thật sẽ được phơi bày. Tuy nhiên, không có bằng chứng nào trong hai đoạn này đề cập đến việc ông Putin nói về 'những hình phạt thích đáng cho Mỹ về những hành động phá hoại đó'. Do đó, không có đủ thông tin để xác minh tuyên bố.",
+  "error": null,
+  "content_source": "url+context"
+}
